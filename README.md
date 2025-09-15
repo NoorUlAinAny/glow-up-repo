@@ -26,13 +26,12 @@ If the API is unavailable, a **fallback mechanism** ensures users still receive 
 - **Visualization:** Matplotlib, Seaborn, Radar Charts  
 
 ### 🔹 Web Application  
-- **Frontend:** React.js, TailwindCSS, React Router  
+- **Frontend:** React.js, bootstrap, React Router  
 - **Backend / APIs:** Python (Flask/Django), Gemini API  
-- **Database:** PostgreSQL / MySQL  
 
 ### 🔹 Tools  
 - GitHub (Version Control)  
-- Node.js, npm (Development)  
+- npm (Development)  
 - Jupyter Notebooks (Model Training & Evaluation)  
 
 ---
@@ -43,7 +42,7 @@ If the API is unavailable, a **fallback mechanism** ensures users still receive 
 3. **Model Prediction** – CNN identifies skin conditions  
 4. **Visualization** – Highlighted areas + radar/severity charts  
 5. **Recommendations** – Gemini API (or fallback) suggests skincare products  
-6. **Report Generation** – A summary is generated for the user  
+ 
 
 ---
 
