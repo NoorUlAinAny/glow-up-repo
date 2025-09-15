@@ -1,0 +1,28 @@
+
+.response-box {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Style HTML tags inside */
+.response-box p {
+  margin-bottom: 10px;
+}
+
+.response-box strong {
+  color: #710431;
+}
+
+.response-box ul {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.response-box li {
+  margin-bottom: 5px;
+}

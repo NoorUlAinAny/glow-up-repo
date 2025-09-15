@@ -1,0 +1,7 @@
+@import url("./layout");
+@import url("./components/button");
+@import url("./layout/footer");
+@import url("./components/uploadsSection");
+@import url("./components/mockrecomendation");
+@import url("./pages/home");
+@import url("./components/loader");

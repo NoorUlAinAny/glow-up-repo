@@ -1,0 +1,20 @@
+header {
+  background: #A770EF;
+  background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);
+  background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);
+
+  img {
+    height: 50px;
+  }
+
+  button {
+    color: #030303 !important;
+  }
+}
+
+
+/* Tablet styles */
+@media (max-width: 1024px) {}
+
+/* Mobile styles */
+@media (max-width: 600px) {}
