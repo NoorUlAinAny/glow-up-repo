@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Image-Based Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .form-container input[type="file"], 
+        .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .preview {
+            margin-top: 20px;
+            max-width: 300px;
+        }
+        .results {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .results h3 {
+            color: #4CAF50;
+            text-align: center;
+        }
+        .results ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .results li {
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Upload an Image for Prediction</h2>
+        <form action="/analyze" method="post" enctype="multipart/form-data">
+            <!-- Dropdown for model selection -->
+            <label for="model">Choose Model:</label>
+            <select name="model" id="model" required>
+                <option value="single_output">Single Output Model</option>
+                <option value="multi_output">Multi Output Model</option>
+            </select>
+
+            <!-- File upload -->
+            <input type="file" name="image" accept="image/*" required onchange="previewImage(event)">
+            <img id="imagePreview" class="preview" src="#" alt="Image Preview" style="display:none;" />
+            
+            <!-- Submit -->
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if predictions %}
+        <div class="results">
+            <h3>Prediction Results</h3>
+            <ul>
+                {% for label, value in predictions.items() %}
+                    <li><strong>{{ label }}:</strong> {{ value }}%</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if error %}
+        <div class="result" style="color:red; font-weight:bold;">
+            {{ error }}
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function(){
+                const img = document.getElementById('imagePreview');
+                img.src = reader.result;
+                img.style.display = 'block';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>
+
